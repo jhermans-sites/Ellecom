@@ -172,12 +172,24 @@
 @media (max-width: 600px) {
   .gallery.gallery-small,
   .gallery.gallery-main {
-    grid-template-columns: repeat(2, 1fr); /* 2 per row instead of 1 */
+    grid-template-columns: repeat(2, 1fr); /* force exactly 2 columns */
   }
+
+  /* Reset spans so images don’t stretch too much */
   .gallery.gallery-main img.wide,
-  .gallery.gallery-main img.vertical { 
+  .gallery.gallery-main img.vertical,
+  .gallery.gallery-main img.square { 
     grid-column: span 1; 
     grid-row: span 1; 
+  }
+
+  /* Optional: reduce base row height for mobile */
+  .gallery.gallery-main {
+    grid-auto-rows: 150px;
+  }
+
+  .gallery.gallery-small {
+    grid-auto-rows: 100px;
   }
 }
 
