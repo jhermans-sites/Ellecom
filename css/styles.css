@@ -174,7 +174,7 @@
 
 .gallery-title {
   text-align: center;       /* centers text horizontally */
-  font-family: 'Fira Mono', monospace;
-  font-size: 30px;
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 26px;
   margin: 40px 0 20px 0;
 }
