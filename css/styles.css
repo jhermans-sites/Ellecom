@@ -148,16 +148,26 @@
   }  
   
 .gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 10px;
+  column-count: 3;          /* Number of columns */
+  column-gap: 10px;         /* Space between columns */
 }
 
 .gallery img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  width: 100%;              /* Fill column width */
+  margin-bottom: 10px;      /* Space between rows */
   display: block;
+  break-inside: avoid;      /* Prevent image from breaking between columns */
 }
   
-    
+/* Responsive masonry */
+@media (max-width: 1000px) {
+  .gallery {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 600px) {
+  .gallery {
+    column-count: 1;
+  }
+}    
