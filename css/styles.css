@@ -159,18 +159,27 @@
   break-inside: avoid;      /* Prevent image from breaking between columns */
 }
   
-/* Responsive masonry */
-@media (max-width: 1000px) {
-  .gallery {
-    column-count: 2;
+/* Tablets */
+@media (max-width: 900px) {
+  .gallery.gallery-small,
+  .gallery.gallery-main {
+    grid-template-columns: repeat(2, 1fr); /* 2 per row on tablets */
   }
+  .gallery.gallery-main img.wide { grid-column: span 2; } /* wide spans full row */
 }
 
+/* Mobile phones */
 @media (max-width: 600px) {
-  .gallery {
-    column-count: 1;
+  .gallery.gallery-small,
+  .gallery.gallery-main {
+    grid-template-columns: repeat(2, 1fr); /* 2 per row instead of 1 */
   }
-}    
+  .gallery.gallery-main img.wide,
+  .gallery.gallery-main img.vertical { 
+    grid-column: span 1; 
+    grid-row: span 1; 
+  }
+}
 
 .gallery-title {
   text-align: center;       /* centers text horizontally */
