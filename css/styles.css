@@ -171,3 +171,26 @@
     column-count: 1;
   }
 }    
+
+/* Make the gallery container relative for overlay */
+.gallery.gallery-small {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  grid-auto-rows: 150px;
+}
+
+/* Overlay title */
+.gallery-title-overlay {
+  position: absolute;
+  top: 50%;           /* vertical center */
+  left: 50%;          /* horizontal center */
+  transform: translate(-50%, -50%);  /* adjust to exact center */
+  font-family: 'Fira Mono', monospace;
+  font-size: 36px;
+  color: white;       /* or any color that stands out */
+  text-align: center;
+  z-index: 10;
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.5); /* optional for readability */
+}
